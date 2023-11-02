@@ -1,4 +1,4 @@
-FROM rust
+FROM registry.opensuse.org/opensuse/toolbox:latest
 
 LABEL maintainer="Hayath"
 LABEL version="1.0"
@@ -8,18 +8,8 @@ ARG USERNAME
 ARG UID
 ARG PROJECT_PWD
 
-RUN apt-get update -y
-RUN apt-get autoremove -y
-RUN apt-get autoclean -y
-RUN apt-get update -y
-RUN apt-get remove git -y || rm /usr/bin/git
+RUN zypper update -y
 # Below is optional
-#########################################
-#RUN apt-get install -y tree
-#RUN apt-get install -y postgresql-client-common postgresql-client
-RUN rustup update && rustup install stable
-#########################################
-
 RUN useradd -ms /bin/bash $USERNAME -u $UID; exit 0
 RUN usermod -a -G sudo $USERNAME; exit 0
 RUN usermod -a -G users $USERNAME; exit 0
@@ -32,5 +22,4 @@ WORKDIR "$PROJECT_PWD"
 # Below is optional
 #########################################
 # for diesel_cli
-RUN cargo install diesel_cli
 #########################################
