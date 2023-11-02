@@ -1,0 +1,8 @@
+export SERVER_URL=0.0.0.0:8000
+export RUST_LOG="info"
+export SERVICE_NAME="fileservice-${USER}"
+export SERVICE_IMAGE="fileservice-image-${USER}"
+export NETWORK_NAME="bluebasket-net"
+export PROJECT_PWD=$PWD
+
+# Below export needed for authentication middleware

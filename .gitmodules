@@ -1,0 +1,3 @@
+[submodule "dockermanager"]
+	path = dockermanager
+	url = git@github.com:batmantechnologies/dockermanager.git
