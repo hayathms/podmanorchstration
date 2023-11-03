@@ -22,7 +22,8 @@ then
 elif [ $choice -eq 2 ]
 then
     EXE_CMD_TOOL="podman"
-    USER_IDS="root"
+    #USER_IDS="root"
+    USER_IDS="$(id -u):$(id -g)"
 else
     echo "Invalid choice"
     exit 1

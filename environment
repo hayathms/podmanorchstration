@@ -1,8 +1,9 @@
 export SERVER_URL=0.0.0.0:8000
 export RUST_LOG="info"
-export SERVICE_NAME="podmanorchstration-${USER}"
-export SERVICE_IMAGE="podmanorchstration-image-${USER}"
-export NETWORK_NAME="podmanorchstration-net"
+export SERVICE_NAME="debugbuild-${USER}"
+export SERVICE_IMAGE="debugbuild-image-${USER}"
+export NETWORK_NAME="debugbuild-net"
 export PROJECT_PWD=$PWD
+export PORT_ADDRESS="-p 8000:8000"
 
 # Below export needed for authentication middleware
