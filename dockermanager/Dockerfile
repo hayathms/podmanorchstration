@@ -8,9 +8,9 @@ ARG USERNAME
 ARG UID
 ARG PROJECT_PWD
 
-RUN zypper update -y
-RUN zypper podman -y
-RUN zypper wget -y
+RUN zypper -n update
+RUN zypper -n install podman
+RUN zypper -n wget
 # Below is optional
 RUN useradd -ms /bin/bash $USERNAME -u $UID; exit 0
 RUN usermod -a -G sudo $USERNAME; exit 0
